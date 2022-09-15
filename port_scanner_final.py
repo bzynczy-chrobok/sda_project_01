@@ -101,7 +101,7 @@ def scan_my_network(interface_name: str, ports: str = "1-100", ip=None, scan_you
 if __name__ == "__main__":
     import argparse
     descr = "Prosty skaner portów wybranej maszyny.\nMoże skanować całą sieć, jak i pojedynczą maszynę."
-    parser = argparse.ArgumentParser(description="Skaner portów.")
+    parser = argparse.ArgumentParser(description=descr)
     parser.add_argument("-H", "--host", help="Nazwa hosta albo adres IP.")
     parser.add_argument("-P", "--port", help="Port lub zakres skanowanych portów. W przypadku zakresu wpisz np 1-80")
     interfaces = network_info.get_available_interfaces()

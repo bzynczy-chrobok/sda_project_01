@@ -305,7 +305,7 @@ ftp> exit
 ```
 ### Eksploracja przejętej maszyny za pośrednictwem SSH dla użytkownika uranus
 Nawiązano połączenie ssh z atakowaną maszyną i znaleziono następujące informacje:
-- plik user.txt w katalogu domowym użytkownika uranus zawierający flagę: **<span data-color="red">flag{h4ck3r}</span>**
+- plik user.txt w katalogu domowym użytkownika uranus zawierający flagę: **flag{h4ck3r}**
 - sprawdzono historię wykonywanych komend zawartą w pliku .bash_history
 ```console
 kali@kali:~$ ssh uranus@192.168.56.106                                                                    

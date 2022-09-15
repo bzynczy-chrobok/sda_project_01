@@ -95,7 +95,7 @@ kali@kali:~$ python brute_force_ssh_final.py --host 192.168.56.106 --user root -
         Hasło: 666
 
 ```
-W wyniku działania skryptu zdobyto następujące poświadczenia:\
+W wyniku działania skryptu zdobyto następujące poświadczenia:
 - użytkownik: **root**
 - hasło: **666**
 
@@ -133,7 +133,7 @@ Na tym etapie porzucono eksploarację przejętej maszyny, celem podjęcia kolejn
 
 ### FTP Brute-force
 **Próba nr. 1**\
-Na podstawie zdobytych w punkcie wyżej poświadczeń, przeprowadzono próbę ataku na port 21 i usługę FTP.
+Na podstawie zdobytych w punkcie wyżej poświadczeń, przeprowadzono próbę ataku na port 21 i usługę FTP.\
 **Skrypt**: [brute_force_ftp_final.py](brute_force_ftp_final.py) wywołany z argumentami:
 - --host 192.168.100.56.106
 - --user root
@@ -200,7 +200,7 @@ ftp:x:113:119:ftp daemon,,,:/srv/ftp:/usr/sbin/nologin
 ```
 
 ### SSH brute-force na użytkownika uranus
-Atak na port 22 i usługę SSH. 'uranus'. Słownik możliwych haseł: rockyou.txt\
+Atak na port 22 i usługę SSH. Użytkownik 'uranus'. Słownik możliwych haseł: rockyou.txt\
 **Skrypt**: [brute_force_ssh_final.py](brute_force_ssh_final.py) wywołany z argumentami:
 - --host 192.168.100.56.106
 - --user uranus
@@ -225,7 +225,7 @@ kali@kali:~$ python brute_force_ssh_final.py --host 192.168.56.106 --user uranus
         Użytkownik: uranus
         Hasło: butterfly
 ```
-W wyniku działania skryptu zdobyto następujące poświadczenia:\
+W wyniku działania skryptu zdobyto następujące poświadczenia:
 - użytkownik: **uranus**
 - hasło: **butterfly**
 
@@ -257,7 +257,7 @@ Last login: Fri Sep  9 07:22:55 2022 from 192.168.100.54
 uranus@vm-sda:~$ 
 ```
 ### FTP Brute-force na użytkownika uranus
-Na podstawie zdobytych wcześniej poświadczeń, przeprowadzono próbę ataku na port 21 i usługę FTP.
+Na podstawie zdobytych wcześniej poświadczeń, przeprowadzono próbę ataku na port 21 i usługę FTP.\
 **Skrypt**: [brute_force_ftp_final.py](brute_force_ftp_final.py) wywołany z argumentami:
 - --host 192.168.100.56.106
 - --user uranus
@@ -269,7 +269,7 @@ kali@kali:~$ python brute_force_ftp_final.py --host 192.168.56.106 --user uranus
         Użytkownik: uranus
         Hasło: butterfly
 ```
-Próba zakończona **powodzeniem**!
+Próba zakończona **powodzeniem**!\
 Sprawdzono poprawność danych poprzez użycie programu ftp dostępnego w kali.
 ```console
 kali@kali:~$ ftp 192.168.56.106                                                        

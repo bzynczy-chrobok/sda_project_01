@@ -106,7 +106,7 @@ if __name__ == "__main__":
     parser.add_argument("-P", "--port", help="Port lub zakres skanowanych portów. W przypadku zakresu wpisz np 1-80")
     interfaces = network_info.get_available_interfaces()
 
-    # parse passed arguments
+    # parsowanie przekazanych argumentów
     args = parser.parse_args()
     if args.host:
         # skrypt uruchomiony z argumentem (adresem ip skanowanej maszyny)

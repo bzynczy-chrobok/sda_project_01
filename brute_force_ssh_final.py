@@ -5,7 +5,6 @@ import socket
 import time
 from logging import NullHandler
 
-# https://www.thepythoncode.com/article/brute-force-ssh-servers-using-paramiko-in-python
 
 def _try_connection(target_host, user, password, target_host_port=22):
     logging.getLogger('paramiko.transport').addHandler(NullHandler())
@@ -38,18 +37,6 @@ def _try_connection(target_host, user, password, target_host_port=22):
             print(f"[*] Przekroczono limit połączeń, ponawiam próbę {user}:{password} z opóźnieniem...")
         time.sleep(10)
         return _try_connection(target_host, user, password, target_host_port)
-    # except EOFError:
-    #     print("EOFError - odsapnę trochę...")
-    #     time.sleep(10)
-    #     return _try_connection(target_host, user, password, target_host_port)
-    # except ConnectionResetError:
-    #     print('muszę trochę odsapnąć')
-    #     time.sleep(10)
-    #     return _try_connection(target_host, user, password, target_host_port)
-    # except:
-    #     print('ogólny except')
-    #     time.sleep(2)
-    #     return _try_connection(target_host, user, password, target_host_port)
     else:
         # Połączenie zostało pomyślnie nawiązane
         if __name__ == "__main__":

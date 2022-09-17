@@ -2,7 +2,6 @@ from ipaddress import IPv4Network
 import nmap
 import network_info_final as network_info # w tym miejscu importujemy sobie wcześniej stworzony skrypt do określania ip i maski
 
-
 def get_netmask_bits(netmask: str) -> int:
     """
     Funkcja zwracająca maskę podsieci w reprezentacji bitowej
@@ -45,12 +44,13 @@ def scan_my_network(interface_name: str, ports: str = "1-100", ip=None, scan_you
     if not ip and not scan_yourself:
         print(f"# Pomijam siebie!" + ' ' * 22 + "#")
     print("#" * 40)
+    print(f"..... Poczekaj chwilę .... trwa skanowanie .....", end='\r')
     if not ip:
         scan_address = scan_address + '/' + str(my_netmask_bits)
 
     nm = nmap.PortScanner()
     nm.scan(scan_address, ports)
-
+    print(f"                                                ")
     for host in nm.all_hosts():
         if not ip and not scan_yourself and host == my_ip:
             continue

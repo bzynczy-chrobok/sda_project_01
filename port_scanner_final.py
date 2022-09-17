@@ -3,12 +3,6 @@ import nmap
 import network_info_final as network_info # w tym miejscu importujemy sobie wcześniej stworzony skrypt do określania ip i maski
 
 
-#####################################################################################
-# na kali: pip install python-nmap
-# żeby sprawdzać wyniki w pycharm też pip install albo przez zakładkę python packages
-# korzystam z: https://pypi.org/project/python-nmap/
-#####################################################################################
-
 def get_netmask_bits(netmask: str) -> int:
     """
     Funkcja zwracająca maskę podsieci w reprezentacji bitowej
@@ -17,14 +11,7 @@ def get_netmask_bits(netmask: str) -> int:
     """
     # w nmap maskę sieci musimy podać w postaci /24 jeżeli równa się ona: 255.255.255.0
     # musimy dokonać jej konwersji i możemy to zrobić na kilka sposobów
-    # Robię przykład z użyciem biblioteki ipaddress i bez użycia bibliotek
-    # Podejmiemy decyzję, którą wersję zostawimy w końcowym skrypcie
-
-    # z biblioteką
     netmask_bits = IPv4Network("0.0.0.0/" + netmask).prefixlen
-
-    # bez biblioteki
-    # netmask_bits = sum(bin(int(x)).count('1') for x in netmask.split('.'))
 
     return netmask_bits
 
